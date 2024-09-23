@@ -1,26 +1,20 @@
-<html>
+<html></html>
+    <head>
+        <title>This JS version</title>
+        <script>
 
-</html>
-
-<head>
-    <title>This JS version</title>
-    <script>
-
-        let dot = () => {
-
-            if (inputText == 15)
-                inputText = document.getElementById("userInput").value
-            alert(Number(inputText) + 1);
-            console.log("button clicked");
-        }
-
-    </script>
-
-<body>
-    <input type="Text" id="userInput" alt="usrerInput" />
-    <button onclick="dot()">Click me</button>
-</body>
-
-</head>
-
+            let dot = () => {
+                inputText=document.getElementById("userInput").value
+                alert(Number(inputText)+1);
+                if(inputText > 15)
+                console.log("button clicked");
+            }
+            
+        </script>
+        <body>
+            <input type="Text" id="userInput" alt="usrerInput"/> 
+            <button onclick="dot()">Click me</button>
+        </body>
+       
+    </head>
 </html>
