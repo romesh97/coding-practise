@@ -7,8 +7,7 @@
     <script src="euler.js">
 
 
-        let calculateSum = () => {
-            inputText = document.getElementById("userInput").value
+        let calculateSum = (limit) => {
             let totalSum = 0;
             for (let number = 0; number < 1000; number++)
                 if (number % 3 == 0 || number % 5 == 0) {
@@ -18,11 +17,16 @@
         }
         calculateSum()
 
+        //TODO implement calculate function
+        function calculate () {
+            let limit = document.getElementById("limit").value
+        }
+
     </script>
 
 <body>
-    <input type="text" id="userInput" />
-    <button onclick="calculateSum()">Click me</button>
+    <input type="text" id="userInput" placeholder="enter number" />
+    <button onclick="calculateSum()">Calculate Sum</button>
 </body>
 
 
