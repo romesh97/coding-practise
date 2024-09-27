@@ -1,0 +1,31 @@
+<html>
+
+</html>
+
+<head>
+    <title>Mutiples with parameters</title>
+    <script src="euler.js">
+
+
+        let calculateSum = () => {
+            inputText = document.getElementById("userInput").value
+            let totalSum = 0;
+            for (let number = 0; number < 1000; number++)
+                if (number % 3 == 0 || number % 5 == 0) {
+                    totalSum += number;
+                    alert("sum of multiples of 3 and 5 and below 1000 is" + totalSum)
+                }
+        }
+        calculateSum()
+
+    </script>
+
+<body>
+    <input type="text" id="userInput" />
+    <button onclick="calculateSum()">Click me</button>
+</body>
+
+
+</head>
+
+</html>
