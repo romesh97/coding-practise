@@ -1,0 +1,35 @@
+<html></html>
+    <head>
+        <title>This JS version</title>
+        <script>
+
+            let dot = () => {
+                inputText=document.getElementById("userInput").value
+                // alert(Number(inputText));
+                if(inputText > 15) {
+                    alert("number is not exceeding");
+                }else {
+                    alert("number is exceeding ")
+                }
+               
+            }
+
+            function Calsum ()  {
+                let totalSum = 0;
+                for (let number = 0; number<1000; number++)
+                if(number % 3 == 0 || number % 5 == 0){
+                    totalSum +=number;
+                    alert("sum of multiple number")
+                } else {
+                    alert("")
+                }
+            }
+            
+        </script>
+        <body>
+            <input type="Text" id="userInput" alt="usrerInput"/> 
+            <button onclick="dot()">Click me</button>
+        </body>
+       
+    </head>
+</html>
