@@ -6,8 +6,12 @@
             let dot = () => {
                 inputText=document.getElementById("userInput").value
                 alert(Number(inputText)+1);
-                if(inputText > 15)
-                alert("number is exceeding");
+                if(inputText > 15) {
+                    alert("number is not exceeding");
+                }else {
+                    alert("number is exceeding ")
+                }
+               
             }
             
         </script>
