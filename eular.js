@@ -1,20 +1,6 @@
-/*If we list all the natural numbers below 10 that are multiples
-of 3 or 5, we get 3, 5, 6 and 9.
-The sum of these multiples is 23.
-
-1. Find the sum of all the multiples of 3 or 5 below 1000.
-
-2. Create a function to find the sum of all the multiples of a or b below n.
-(a,b,n) are function parameters
-
-3. Allow the user to enter the parameters via text box(es)
-and alert them to the output
-*/
 alert("Loaded Euler JS");
 
 // answers
-
-// 1.
 
 total = 0;
 for (i = 0; i < 1000; i++) {
@@ -28,25 +14,25 @@ alert('Find the sum of all the multiples of 3 or 5 below 1000 : ' + total);
 a = 3;
 b = 5;
 n = 1000;
-function findMultiples(aval, bval, nval) {
+function findMultiples(a, b, n) {
     total = 0;
-    for (i = 0; i < nval; i++) {
-        if (i % aval == 0 || i % bval == 0) total += i;
+    for (i = 0; i < n; i++) {
+        if (i % a == 0 || i % b == 0) total += i;
     };
     return total;
 }
 
-const totalFinal = findMultiples(a,b,n);
-alert('multiples of a or b below n : '+totalFinal);
+const totalFinal = findMultiples(a, b, n);
+alert('multiples of a or b below n : ' + totalFinal);
 
 // 3.
-function findMultiplesViaInput() {
-    let inputTextA = document.getElementById('userInputA').value;
-    let inputTextB = document.getElementById('userInputB').value;
-    let inputTextN = document.getElementById('userInputN').value;
+function multiplesValue() {
+    let inputA = document.getElementById('inputA').value;
+    let inputB = document.getElementById('inputB').value;
+    let inputN = document.getElementById('inputN').value;
     total = 0;
-    for (i = 0; i < inputTextN; i++) {
-        if (i % inputTextA == 0 || i % inputTextB == 0) total += i;
+    for (i = 0; i < inputN; i++) {
+        if (i % inputA == 0 || i % inputB == 0) total += i;
     };
-     alert('Your answer is '+total);
+    alert('Your answer is ' + total);
 }
