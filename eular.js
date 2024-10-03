@@ -1,19 +1,13 @@
 alert("Loaded Euler JS");
 
-// answers
+// 1. Sum of multiples of 3 or 5 below 1000
+let total = 0;
+for (let i = 0; i < 1000; i++) {
+    if (i % 3 === 0 || i % 5 === 0) total += i;
+}
+alert('Find the sum of all the multiples of 3 or 5 below 1000: ' + total);
 
-total = 0;
-for (i = 0; i < 1000; i++) {
-    if (i % 3 == 0 || i % 5 == 0) total += i;
-};
-
-alert('Find the sum of all the multiples of 3 or 5 below 1000 : ' + total);
-
-
-// 2.
-a = 3;
-b = 5;
-n = 1000;
+// 2. Function to sum multiples of a or b below n
 function sumMultiples(a, b, n) {
     let sum = 0;
     for (let i = 1; i < n; i++) {
@@ -24,14 +18,14 @@ function sumMultiples(a, b, n) {
     return sum;
 }
 
-const result = findMultiples(3, 5, 1000);
-alert('multiples of a or b below n : ' + result);
+const result = sumMultiples(3, 5, 1000);
+alert('Multiples of a or b below n: ' + result);
 
-// 3.
+// 3. Calculate from user input
 function calculateFromUserInput() {
-    let a = document.getElementById('inputA').value;
-    let b = document.getElementById('inputB').value;
-    let n = document.getElementById('inputN').value;
+    let a = parseInt(document.getElementById('InputA').value);
+    let b = parseInt(document.getElementById('InputB').value);
+    let n = parseInt(document.getElementById('InputN').value);
 
     const result = sumMultiples(a, b, n);
     alert(`Sum of multiples of ${a} or ${b} below ${n} is: ${result}`);
