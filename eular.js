@@ -20,6 +20,10 @@ function sumMultiples(a, b, n) {
 
 const result = sumMultiples(3, 5, 1000);
 //alert('Multiples of a or b below n: ' + result);
+const resultString = `Sum of multiples of ${a} or ${b} below ${n} is: ${result}`;
+
+//display result
+document.getElementById("resultString").textContent = resultString;
 
 
 // 3. Calculate from user input
