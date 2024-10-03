@@ -32,7 +32,7 @@ function calculateFromUserInput() {
     const resultString = `Sum of multiples of ${a} or ${b} below ${n} is: ${result}`;
 
     //display result
-    document.getElementById("resultString").textContent = resultString;
+    document.getElementById("resultDisplay").textContent = resultString;
 
 
 }
