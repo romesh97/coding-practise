@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiples Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #toggleButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        let results = [];
+        let hiddenResults = [];
+
+        function sumMultiples(a, b, n) {
+            let sum = 0;
+            for (let i = 1; i < n; i++) {
+                if (i % a === 0 || i % b === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        function calculateFromUserInput() {
+            let a = parseInt(document.getElementById('InputA').value);
+            let b = parseInt(document.getElementById('InputB').value);
+            let n = parseInt(document.getElementById('InputN').value);
+
+
+            const result = sumMultiples(a, b, n);
+            const resultString = `Sum of multiples of ${a} or ${b} below ${n} is: ${result}`;
+            
+            // Add new result to the beginning of the visible or hidden array
+            if (hiddenResults.length > 0) {
+                hiddenResults.unshift(resultString);
+            } else {
+                results.unshift(resultString);
+            }
+            
+            updateDisplay();
+        }
+
+        function toggleResults() {
+            if (results.length > 0) {
+                // Hide results
+                hiddenResults = results.splice(0, results.length);
+                document.getElementById('toggleButton').textContent = 'Show Results';
+            } else {
+                // Show results
+                results = hiddenResults.splice(0, hiddenResults.length);
+                document.getElementById('toggleButton').textContent = 'Hide Results';
+            }
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const displayDiv = document.getElementById('resultDisplay');
+            displayDiv.innerHTML = results.join('<br>');
+        }
+
+        function clearResults() {
+            results.splice(0, results.length);
+            hiddenResults.splice(0, hiddenResults.length);
+            updateDisplay();
+        }
+    </script>
+</head>
+<body>
+    <h2>Multiples Calculator</h2>
+    <div>
+        <span>Enter a: </span><input type="number" id="InputA" />
+        <span>Enter b: </span><input type="number" id="InputB" />
+        <span>Enter n: </span><input type="number" id="InputN" />
+        <button onclick="calculateFromUserInput()">Calculate</button>
+        <button id="toggleButton" onclick="toggleResults()">Hide Results</button>
+        <button onclick="clearResults()">Clear All</button>
+    </div>
+    <div id="resultDisplay" class="result"></div>
+</body>
+</html>
