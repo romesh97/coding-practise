@@ -1,0 +1,40 @@
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket Total Calculator</title>
+</head>
+<body>
+    <h1>Basket Total Calculator</h1>
+    <button onclick="showTotal()">Calculate Total</button>
+    <p id="totalCost"></p>
+    <script>
+        function calculateBasketTotal(basket, prices) {
+            let total = 0;
+            for (let product in basket) {
+                if (prices.hasOwnProperty(product)) {
+                    total += basket[product] * prices[product];
+                }
+            }
+            return total;
+        }
+
+        const basket = {
+            "apple": 3,
+            "banana": 2,
+            "orange": 5
+        };
+
+        const prices = {
+            "apple": 0.5,
+            "banana": 0.75,
+            "orange": 0.8
+        };
+
+        function showTotal() {
+            const totalCost = calculateBasketTotal(basket, prices);
+            document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
