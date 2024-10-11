@@ -1,35 +1,35 @@
-<html >
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basket Total Calculator</title>
 </head>
+
 <body>
     <h1>Basket Total Calculator</h1>
     <button onclick="showTotal()">Calculate Total</button>
     <p id="totalCost"></p>
     <script>
         function calculateBasketTotal(basket, prices) {
-            let total = 0;
-            for (let product in basket) {
-                if (prices.hasOwnProperty(product)) {
-                    total += basket[product] * prices[product];
-                }
-            }
-            return total;
+            const priceMap = new Map(prices.map(item => [item.product, item.price]));
+            return basket.reduce((total, item) => {
+                const price = priceMap.get(item.product) || 0;
+                return total + (item.quantity * price);
+            }, 0);
         }
 
-        const basket = {
-            "apple": 3,
-            "banana": 2,
-            "orange": 5
-        };
+        const basket = [
+            { product: "apple", quantity: 3 },
+            { product: "banana", quantity: 2 },
+            { product: "orange", quantity: 5 }
+        ];
 
-        const prices = {
-            "apple": 0.5,
-            "banana": 0.75,
-            "orange": 0.8
-        };
+        const prices = [
+            { product: "apple", price: 0.5 },
+            { product: "banana", price: 0.75 },
+            { product: "orange", price: 0.8 }
+        ];
 
         function showTotal() {
             const totalCost = calculateBasketTotal(basket, prices);
@@ -37,4 +37,5 @@
         }
     </script>
 </body>
+
 </html>
