@@ -1,8 +1,6 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basket Total Calculator</title>
 </head>
 
@@ -33,7 +31,7 @@
 
         function showTotal() {
             const totalCost = calculateBasketTotal(basket, prices);
-            document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost.toFixed(2)}`;
+            document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost}`;
         }
     </script>
 </body>
