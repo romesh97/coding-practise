@@ -1,9 +1,14 @@
 function calculateBasketTotal(basket, prices) {
     const priceMap = new Map(prices.map(item => [item.product, item.price]));
-    return basket.reduce((total, item) => {
+    let total = 0;
+    for(const item in basket){
         const price = priceMap.get(item.product) || 0;
-        return total + (item.quantity * price);
-    }, 0);
+        total=+ item.quantity * price
+    }
+    // return basket.reduce((total, item) => {
+    //     const price = priceMap.get(item.product) || 0;
+    //     return total + (item.quantity * price);
+    // }, 0);
 }
 
 const basket = [
