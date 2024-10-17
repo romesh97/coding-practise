@@ -26,5 +26,5 @@ const prices = [
 
 function showTotal() {
     const totalCost = calculateBasketTotal(basket, prices);
-    document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost}`;
+    document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost.toFixed(2)}`;
 }
