@@ -19,12 +19,12 @@ const basket = [
 ];
 
 const prices = [
-    { product: "apple", price: 0.5 },
-    { product: "banana", price: 0.75 },
-    { product: "orange", price: 0.8 }
+    { product: "apple", price: 2 },
+    { product: "banana", price: 4 },
+    { product: "orange", price: 1 }
 ];
 
 function showTotal() {
     const totalCost = calculateBasketTotal(basket, prices);
-    document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost.toFixed(2)}`;
+    document.getElementById('totalCost').innerText = `Total cost of the basket: $${totalCost}`;
 }
