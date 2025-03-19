@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Select the buttons and the paragraph
     const firstButton = document.getElementById('firstButton');
     const secondButton = document.getElementById('secondButton');
+    const thirdButton = document.getElementById('thirdButton');
     const message = document.getElementById('message');
   
     // Add an event listener to the first button
@@ -13,5 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     secondButton.addEventListener('click', () => {
       message.textContent = 'That I have to say you something';
     });
+
+    thirdButton.addEventListener('click', () => {
+        message.textContent = 'Isaani Modaz...';
+      });
   });
   
