@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Add an event listener to the second button
     secondButton.addEventListener('click', () => {
-      message.textContent = 'That I have to say you something';
+      message.textContent = 'I have to say you something';
     });
 
     thirdButton.addEventListener('click', () => {
